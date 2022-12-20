@@ -12,7 +12,6 @@ import com.example.biopinstats.EnabledNavigationActivity
 import com.example.biopinstats.MainApp
 import com.example.biopinstats.R
 import com.example.biopinstats.databinding.FragmentLoginBinding
-import com.example.biopinstats.databinding.FragmentRegisterBinding
 
 
 class LoginFragment : Fragment() {

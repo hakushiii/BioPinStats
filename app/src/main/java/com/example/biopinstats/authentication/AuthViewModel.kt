@@ -3,6 +3,7 @@ package com.example.biopinstats.authentication
 import androidx.lifecycle.*
 import com.example.biopinstats.database.dao.UserDao
 import com.example.biopinstats.database.models.User
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class AuthViewModel(private val userDao: UserDao): ViewModel() {
@@ -46,6 +47,8 @@ class AuthViewModel(private val userDao: UserDao): ViewModel() {
             return false
         return true
     }
+
+    fun getAllUser(): Flow<List<User>> = userDao.getAll()
 }
 
 class AuthViewModelFactory(private val userDao: UserDao): ViewModelProvider.Factory {

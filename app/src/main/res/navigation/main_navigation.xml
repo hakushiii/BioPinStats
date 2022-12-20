@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_navigation">
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/recyclerViewFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.biopinstats.main.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_logFragment"
+            app:destination="@id/logFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_liveChangesFragment"
+            app:destination="@id/liveChangesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logFragment"
+        android:name="com.example.biopinstats.main.LogFragment"
+        android:label="LogFragment" />
+    <fragment
+        android:id="@+id/liveChangesFragment"
+        android:name="com.example.biopinstats.main.LiveChangesFragment"
+        android:label="LiveChangesFragment" />
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.example.biopinstats.main.RecyclerViewFragment"
+        android:label="RecyclerViewFragment" />
 </navigation>
