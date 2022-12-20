@@ -13,6 +13,6 @@ interface UserDao {
     suspend fun getUser(username: String, password: String): User?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertUser(user: User)
+    suspend fun insertUser(user: User)
 
 }

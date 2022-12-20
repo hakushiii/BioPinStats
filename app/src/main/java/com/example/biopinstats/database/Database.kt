@@ -10,7 +10,7 @@ import com.example.biopinstats.database.models.User
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
-    abstract fun UserDao(): UserDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
