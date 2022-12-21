@@ -1,5 +1,6 @@
 package com.example.biopinstats.main.api
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +9,9 @@ import kotlinx.coroutines.launch
 
 class ApiViewModel: ViewModel() {
 
+    private val _command = MutableLiveData<String>()
+    val command: LiveData<String> = _command
+
     init {
         getApiData()
     }
@@ -15,20 +19,12 @@ class ApiViewModel: ViewModel() {
     private fun getApiData() {
         viewModelScope.launch {
             try {
-//                val listResult = SignalApi.retrofitService.getSignal()
-//                _status.value = "Success: ${listResult.size} Signals retrieved"
-//
-//                for (signal in listResult) {
-//                    _signals.add(Entry(signal.id.toFloat(), signal.data))
-//                }
-//
-//                val lineDataset = LineDataSet(_signals, "Signal")
-//                lineDataset.circleRadius = 4f
-//                lineDataset.valueTextSize = 10F
-//                _data.value = LineData(lineDataset)
+                val result = CommandApi.retrofitService.getData()
+                    _command.value = result.command
+
             }
             catch (e: Exception) {
-//                _status.value = "Failure: ${e.message}"
+                Log.d("API","Error: ${e.message}")
             }
         }
     }

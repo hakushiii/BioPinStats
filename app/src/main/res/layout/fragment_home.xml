@@ -16,5 +16,10 @@
             android:layout_height="match_parent"
             android:text="WELCOME TO STATS" />
 
+        <Button
+            android:id="@+id/api_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </FrameLayout>
 </layout>

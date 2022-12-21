@@ -5,20 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.biopinstats.R
+import com.example.biopinstats.databinding.FragmentLiveChangesBinding
+import com.example.biopinstats.main.api.ApiViewModel
 
 class LiveChangesFragment : Fragment() {
 
+    private val viewModel: ApiViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var _binding: FragmentLiveChangesBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_live_changes, container, false)
+    ): View {
+        _binding = FragmentLiveChangesBinding.inflate(inflater, container, false)
+
+        binding.lifecycleOwner = this.viewLifecycleOwner
+        binding.viewModel = viewModel
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }
