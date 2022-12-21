@@ -44,16 +44,26 @@ class RegisterFragment : Fragment() {
 
     private fun insertUser() {
 
+        val usernameOriginal = binding.username.text.toString()
         val passwordOriginal = binding.password.text.toString()
         val passwordCheck = binding.confirmPassword.text.toString()
 
-        if (passwordOriginal === passwordCheck) {
-            viewModel.newUser(
-                username = binding.username.text.toString(),
-                password = binding.password.text.toString()
-            )
+        if (usernameOriginal.isEmpty()) {
+          Log.d("Register Fragment", "Username Empty")
+        } else if (passwordOriginal.isEmpty()) {
+            Log.d("Register Fragment","Password Empty")
+        } else if (passwordCheck.isEmpty()) {
+            Log.d("Register Fragment", "Check Password")
         } else {
-            Log.d("Register Fragment", "Password must Match")
+            if (passwordOriginal == passwordCheck) {
+                viewModel.newUser(
+                    username = binding.username.text.toString(),
+                    password = binding.password.text.toString()
+                )
+                view?.findNavController()?.navigate(R.id.action_registerFragment_to_loginFragment)
+            } else {
+                Log.d("Register Fragment", "Password must Match")
+            }
         }
     }
 }

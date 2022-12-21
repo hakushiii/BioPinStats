@@ -2,6 +2,7 @@ package com.example.biopinstats.authentication
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -52,12 +53,19 @@ class LoginFragment : Fragment() {
     }
 
     private fun login() {
-        if (userExist()) {
-            startActivity(Intent(activity, EnabledNavigationActivity::class.java))
-        }
-        else {
+        val usernameOriginal = binding.username.text.toString()
+        val passwordOriginal = binding.password.text.toString()
 
+        if (usernameOriginal.isEmpty()) {
+            Log.d("Register Fragment", "Username Empty")
+        } else if (passwordOriginal.isEmpty()) {
+            Log.d("Register Fragment","Password Empty")
+        } else{
+            if (userExist()) {
+                startActivity(Intent(activity, EnabledNavigationActivity::class.java))
+            } else {
+                Log.d("Login Fragment", "Who are you")
+            }
         }
-
     }
 }
