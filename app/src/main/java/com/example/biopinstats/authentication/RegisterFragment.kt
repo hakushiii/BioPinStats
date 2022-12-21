@@ -43,9 +43,17 @@ class RegisterFragment : Fragment() {
     }
 
     private fun insertUser() {
-        viewModel.newUser(
-            username = binding.username.text.toString(),
-            password = binding.password.text.toString()
-        )
+
+        val passwordOriginal = binding.password.text.toString()
+        val passwordCheck = binding.confirmPassword.text.toString()
+
+        if (passwordOriginal === passwordCheck) {
+            viewModel.newUser(
+                username = binding.username.text.toString(),
+                password = binding.password.text.toString()
+            )
+        } else {
+            Log.d("Register Fragment", "Password must Match")
+        }
     }
 }
