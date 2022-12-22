@@ -12,6 +12,16 @@
         android:layout_height="match_parent"
         tools:context=".main.LogFragment">
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/form_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Create Log"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
@@ -19,7 +29,8 @@
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/form_button"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

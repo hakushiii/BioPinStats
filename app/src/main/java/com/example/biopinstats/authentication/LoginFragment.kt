@@ -12,6 +12,8 @@ import androidx.navigation.findNavController
 import com.example.biopinstats.EnabledNavigationActivity
 import com.example.biopinstats.MainApp
 import com.example.biopinstats.R
+import com.example.biopinstats.database.AuthViewModel
+import com.example.biopinstats.database.AuthViewModelFactory
 import com.example.biopinstats.databinding.FragmentLoginBinding
 
 

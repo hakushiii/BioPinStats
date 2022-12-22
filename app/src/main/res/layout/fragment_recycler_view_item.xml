@@ -18,18 +18,18 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/username"
+                android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/item_cardview"
                 app:layout_constraintStart_toStartOf="@id/item_cardview"
                 tools:text="TEXT1"/>
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/password"
+                android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/username"
-                app:layout_constraintStart_toStartOf="@id/username"
+                app:layout_constraintTop_toBottomOf="@id/time"
+                app:layout_constraintStart_toStartOf="@id/time"
                 tools:text="TEXT2"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

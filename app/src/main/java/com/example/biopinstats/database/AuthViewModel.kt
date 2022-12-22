@@ -1,4 +1,4 @@
-package com.example.biopinstats.authentication
+package com.example.biopinstats.database
 
 import androidx.lifecycle.*
 import com.example.biopinstats.database.dao.UserDao
@@ -40,12 +40,6 @@ class AuthViewModel(private val userDao: UserDao): ViewModel() {
             return true
         }
         return false
-    }
-
-    fun isEntryValid(username: String, password: String): Boolean {
-        if (username.isBlank() || password.isBlank())
-            return false
-        return true
     }
 
     fun getAllUser(): Flow<List<User>> = userDao.getAll()

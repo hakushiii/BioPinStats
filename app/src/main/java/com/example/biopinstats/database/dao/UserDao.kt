@@ -1,11 +1,9 @@
 package com.example.biopinstats.database.dao
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import com.example.biopinstats.database.models.User
 import kotlinx.coroutines.flow.Flow
 

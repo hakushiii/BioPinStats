@@ -25,8 +25,6 @@ class ApiViewModel: ViewModel() {
                     _command.value = result.command
                     delay(5000)
                 }
-
-
             }
             catch (e: Exception) {
                 Log.d("API","Error: ${e.message}")

@@ -18,9 +18,17 @@
     <fragment
         android:id="@+id/logFragment"
         android:name="com.example.biopinstats.main.LogFragment"
-        android:label="LogFragment" />
+        android:label="LogFragment" >
+        <action
+            android:id="@+id/action_logFragment_to_logFormFragment"
+            app:destination="@id/logFormFragment" />
+    </fragment>
     <fragment
         android:id="@+id/liveChangesFragment"
         android:name="com.example.biopinstats.main.LiveChangesFragment"
         android:label="LiveChangesFragment" />
+    <fragment
+        android:id="@+id/logFormFragment"
+        android:name="com.example.biopinstats.main.log.LogFormFragment"
+        android:label="LogFormFragment" />
 </navigation>
