@@ -28,5 +28,8 @@ class HomeFragment : Fragment() {
         binding.apiButton.setOnClickListener {
                 view: View -> view.findNavController().navigate(R.id.action_homeFragment_to_liveChangesFragment)
         }
+        binding.logButton.setOnClickListener {
+                view: View -> view.findNavController().navigate(R.id.action_homeFragment_to_logFragment)
+        }
     }
 }

@@ -23,8 +23,4 @@
         android:id="@+id/liveChangesFragment"
         android:name="com.example.biopinstats.main.LiveChangesFragment"
         android:label="LiveChangesFragment" />
-    <fragment
-        android:id="@+id/recyclerViewFragment"
-        android:name="com.example.biopinstats.main.RecyclerViewFragment"
-        android:label="RecyclerViewFragment" />
 </navigation>

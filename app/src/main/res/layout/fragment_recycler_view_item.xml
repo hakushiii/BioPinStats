@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,14 +12,29 @@
         android:layout_height="wrap_content"
         tools:context=".main.adapter.RecyclerViewItem">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/username"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_cardview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/item_cardview"
+                app:layout_constraintStart_toStartOf="@id/item_cardview"
+                tools:text="TEXT1"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/username"
+                app:layout_constraintStart_toStartOf="@id/username"
+                tools:text="TEXT2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </com.google.android.material.card.MaterialCardView>
 </layout>
