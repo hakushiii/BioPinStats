@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ApiViewModel: ViewModel() {
@@ -19,8 +20,12 @@ class ApiViewModel: ViewModel() {
     private fun getApiData() {
         viewModelScope.launch {
             try {
-                val result = CommandApi.retrofitService.getData()
+                while (true) {
+                    val result = CommandApi.retrofitService.getData()
                     _command.value = result.command
+                    delay(5000)
+                }
+
 
             }
             catch (e: Exception) {
