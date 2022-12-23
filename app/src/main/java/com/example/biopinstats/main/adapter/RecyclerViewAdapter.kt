@@ -14,8 +14,9 @@ class RecyclerViewAdapter(private var onUpdateClicked: (Log) -> Unit,
     class RecyclerViewViewHolder(
         binding: FragmentRecyclerViewItemBinding
     ): RecyclerView.ViewHolder(binding.root) {
-        val time = binding.time
         val status = binding.status
+        val uptime = binding.uptime
+        val description = binding.description
         val updateButton = binding.updateButton
         val deleteButton = binding.deleteButton
     }
@@ -31,8 +32,9 @@ class RecyclerViewAdapter(private var onUpdateClicked: (Log) -> Unit,
     }
     override fun onBindViewHolder(holder: RecyclerViewViewHolder, position: Int) {
         val item = getItem(position)
-        holder.time.text = item.Time
         holder.status.text = item.Status
+        holder.uptime.text = item.Uptime
+        holder.description.text = item.Description
 
         holder.updateButton.setOnClickListener {
             onUpdateClicked(item)
@@ -45,7 +47,7 @@ class RecyclerViewAdapter(private var onUpdateClicked: (Log) -> Unit,
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Log>() {
             override fun areItemsTheSame(oldItem: Log, newItem: Log): Boolean {
-                return oldItem.Time == newItem.Time
+                return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(oldItem: Log, newItem: Log): Boolean {

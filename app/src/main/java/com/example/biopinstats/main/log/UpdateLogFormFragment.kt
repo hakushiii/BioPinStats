@@ -45,7 +45,7 @@ class UpdateLogFormFragment : Fragment() {
         lifecycle.coroutineScope.launch {
             getLog(id).collect {
                 binding.apply {
-                    timeEdit.setText(it.Time)
+                    timeEdit.setText(it.Uptime)
                     statusEdit.setText(it.Status)
                 }
             }
@@ -59,8 +59,9 @@ class UpdateLogFormFragment : Fragment() {
         if (isEntryValid()) {
             logViewModel.updateLog(
                 id = id,
-                time = binding.timeEdit.text.toString(),
-                status = binding.statusEdit.text.toString()
+                uptime = binding.timeEdit.text.toString(),
+                status = binding.statusEdit.text.toString(),
+                description = binding.descriptionEdit.text.toString()
             )
             findNavController().navigateUp()
         } else {
@@ -72,7 +73,6 @@ class UpdateLogFormFragment : Fragment() {
 
     private fun isEntryValid(): Boolean {
         return logViewModel.isEntryValid(
-            Time = binding.timeEdit.text.toString(),
             Status = binding.timeEdit.text.toString()
         )
     }

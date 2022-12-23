@@ -11,8 +11,10 @@ data class Log(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     @NonNull @ColumnInfo
-    val Time: String,
-    @NonNull @ColumnInfo
     val Status: String,
+    @ColumnInfo
+    val Uptime: String,
+    @ColumnInfo
+    val Description: String,
 
 )

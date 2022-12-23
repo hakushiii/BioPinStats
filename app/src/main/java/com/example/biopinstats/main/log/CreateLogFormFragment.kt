@@ -41,8 +41,9 @@ class CreateLogFormFragment : Fragment() {
     private fun addLog() {
         if (isEntryValid()) {
             logViewModel.addLog(
-                time = binding.timeEdit.text.toString(),
-                status = binding.statusEdit.text.toString()
+                uptime = binding.timeEdit.text.toString(),
+                status = binding.statusEdit.text.toString(),
+                description = binding.descriptionEdit.text.toString()
             )
             findNavController().navigateUp()
         } else {
@@ -52,7 +53,6 @@ class CreateLogFormFragment : Fragment() {
 
     private fun isEntryValid(): Boolean {
         return logViewModel.isEntryValid(
-            Time = binding.timeEdit.text.toString(),
             Status = binding.timeEdit.text.toString()
         )
     }
