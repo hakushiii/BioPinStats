@@ -21,14 +21,27 @@
         android:label="LogFragment" >
         <action
             android:id="@+id/action_logFragment_to_logFormFragment"
-            app:destination="@id/logFormFragment" />
+            app:destination="@id/createLogFormFragment" />
+        <action
+            android:id="@+id/action_logFragment_to_updateLogFormFragment"
+            app:destination="@id/updateLogFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/liveChangesFragment"
         android:name="com.example.biopinstats.main.LiveChangesFragment"
         android:label="LiveChangesFragment" />
     <fragment
-        android:id="@+id/logFormFragment"
-        android:name="com.example.biopinstats.main.log.LogFormFragment"
-        android:label="LogFormFragment" />
+        android:id="@+id/createLogFormFragment"
+        android:name="com.example.biopinstats.main.log.CreateLogFormFragment"
+        android:label="LogFormFragment"/>
+
+    <fragment
+        android:id="@+id/updateLogFormFragment"
+        android:name="com.example.biopinstats.main.log.UpdateLogFormFragment"
+        android:label="UpdateLogFormFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

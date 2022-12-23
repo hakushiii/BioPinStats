@@ -8,12 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.biopinstats.database.models.Log
 import com.example.biopinstats.databinding.FragmentRecyclerViewItemBinding
 
-class RecyclerViewAdapter: ListAdapter<Log, RecyclerViewAdapter.RecyclerViewViewHolder>(DiffCallback) {
+class RecyclerViewAdapter(private var onUpdateClicked: (Log) -> Unit,
+                          private var onDeleteClicked: (Log) -> Unit
+): ListAdapter<Log, RecyclerViewAdapter.RecyclerViewViewHolder>(DiffCallback) {
     class RecyclerViewViewHolder(
         binding: FragmentRecyclerViewItemBinding
     ): RecyclerView.ViewHolder(binding.root) {
         val time = binding.time
         val status = binding.status
+        val updateButton = binding.updateButton
+        val deleteButton = binding.deleteButton
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewViewHolder {
@@ -29,6 +33,13 @@ class RecyclerViewAdapter: ListAdapter<Log, RecyclerViewAdapter.RecyclerViewView
         val item = getItem(position)
         holder.time.text = item.Time
         holder.status.text = item.Status
+
+        holder.updateButton.setOnClickListener {
+            onUpdateClicked(item)
+        }
+        holder.deleteButton.setOnClickListener {
+            onDeleteClicked(item)
+        }
     }
 
     companion object {

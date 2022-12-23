@@ -8,9 +8,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/update_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".main.log.LogFormFragment">
+        tools:context=".main.log.CreateLogFormFragment">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/time_edit"

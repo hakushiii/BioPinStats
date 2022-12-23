@@ -19,12 +19,24 @@ class LogViewModel(private val logDao: LogDao): ViewModel() {
     fun getLog(id: Int): Flow<Log> = logDao.getLog(id)
 
     fun getAllLog(): Flow<List<Log>> = logDao.getAll()
-    
+
     fun addLog(time: String, status: String) {
         val newLog = Log(
             Time = time,
             Status = status)
         logDao.insertLog(newLog)
+    }
+
+    fun updateLog(id: Int, time: String, status: String) {
+        val newLog = Log(
+            id = id,
+            Time = time,
+            Status = status)
+        logDao.updateLog(newLog)
+    }
+
+    fun deleteLog(log: Log) {
+        logDao.deleteLog(log)
     }
 
     fun isEntryValid(Time: String, Status: String): Boolean {

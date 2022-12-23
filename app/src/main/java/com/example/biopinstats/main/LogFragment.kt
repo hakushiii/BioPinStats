@@ -8,13 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.coroutineScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.biopinstats.MainApp
 import com.example.biopinstats.R
 import com.example.biopinstats.database.LogViewModel
 import com.example.biopinstats.database.LogViewModelFactory
+import com.example.biopinstats.database.models.Log
 import com.example.biopinstats.databinding.FragmentLogBinding
 import com.example.biopinstats.main.adapter.RecyclerViewAdapter
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
 class LogFragment : Fragment() {
@@ -46,7 +49,13 @@ class LogFragment : Fragment() {
         }
 
         recyclerView = binding.recyclerView
-        val adapter = RecyclerViewAdapter()
+        val adapter = RecyclerViewAdapter( {
+            val action = LogFragmentDirections.actionLogFragmentToUpdateLogFormFragment(it.id)
+            this.findNavController().navigate(action)
+        },
+            {
+                    log: Log -> showConfirmationDialog(log)
+            })
         recyclerView.adapter = adapter
 
         lifecycle.coroutineScope.launch {
@@ -54,5 +63,15 @@ class LogFragment : Fragment() {
                 adapter.submitList(it)
             }
         }
+    }
+
+    private fun showConfirmationDialog(log: Log) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(android.R.string.dialog_alert_title))
+            .setMessage("Are you sure you want to delete?")
+            .setCancelable(false)
+            .setNegativeButton("No") { _, _ -> }
+            .setPositiveButton("Yes") { _, _ -> logViewModel.deleteLog(log) }
+            .show()
     }
 }

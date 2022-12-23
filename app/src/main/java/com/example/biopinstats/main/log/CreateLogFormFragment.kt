@@ -6,17 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.biopinstats.MainApp
-import com.example.biopinstats.R
 import com.example.biopinstats.database.LogViewModel
 import com.example.biopinstats.database.LogViewModelFactory
-import com.example.biopinstats.databinding.FragmentLogFormBinding
-import kotlinx.coroutines.launch
+import com.example.biopinstats.databinding.FragmentCreateLogFormBinding
 
-class LogFormFragment : Fragment() {
+class CreateLogFormFragment : Fragment() {
     private val logViewModel: LogViewModel by activityViewModels {
         LogViewModelFactory(
             (activity?.application as MainApp).database
@@ -24,14 +20,14 @@ class LogFormFragment : Fragment() {
         )
     }
 
-    private var _binding: FragmentLogFormBinding? = null
+    private var _binding: FragmentCreateLogFormBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLogFormBinding.inflate(inflater, container, false)
+        _binding = FragmentCreateLogFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 

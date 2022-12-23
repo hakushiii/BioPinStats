@@ -32,6 +32,22 @@
                 app:layout_constraintStart_toStartOf="@id/time"
                 tools:text="TEXT2"/>
 
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/status"
+                app:layout_constraintStart_toEndOf="@id/delete_button"
+                android:text="update"/>
+
+            <Button
+                android:id="@+id/delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/status"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="delete"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
