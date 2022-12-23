@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="HOME"/>
+    <item
+        android:id="@+id/logs"
+        android:title="LOGS"/>
+    <item
+        android:id="@+id/api"
+        android:title="API"/>
+    <item
+        android:id="@+id/about"
+        android:title="ABOUT"/>
+    <item
+        android:id="@+id/faq"
+        android:title="FAQ"/>
+    <item
+        android:id="@+id/logout"
+        android:title="LOGOUT"/>
+</menu>

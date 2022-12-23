@@ -65,6 +65,8 @@ class LoginFragment : Fragment() {
         } else{
             if (userExist()) {
                 startActivity(Intent(activity, EnabledNavigationActivity::class.java))
+                binding.username.setText("")
+                binding.password.setText("")
             } else {
                 Log.d("Login Fragment", "Who are you")
             }
