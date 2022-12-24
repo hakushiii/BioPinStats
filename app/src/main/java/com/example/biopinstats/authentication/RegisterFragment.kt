@@ -51,10 +51,19 @@ class RegisterFragment : Fragment() {
         val passwordCheck = binding.confirmPassword.text.toString()
 
         if (usernameOriginal.isEmpty()) {
-          Log.d("Register Fragment", "Username Empty")
+            binding.usernameLayout.error = "Cannot be Empty"
+            binding.passwordLayout.error = null
+            binding.confirmPasswordLayout.error = null
+            Log.d("Register Fragment", "Username Empty")
         } else if (passwordOriginal.isEmpty()) {
+            binding.usernameLayout.error = null
+            binding.passwordLayout.error = "Cannot be Empty"
+            binding.confirmPasswordLayout.error = null
             Log.d("Register Fragment","Password Empty")
         } else if (passwordCheck.isEmpty()) {
+            binding.usernameLayout.error = null
+            binding.passwordLayout.error = null
+            binding.confirmPasswordLayout.error = "Cannot be Empty"
             Log.d("Register Fragment", "Check Password")
         } else {
             if (passwordOriginal == passwordCheck) {
@@ -62,8 +71,14 @@ class RegisterFragment : Fragment() {
                     username = binding.username.text.toString(),
                     password = binding.password.text.toString()
                 )
+                binding.usernameLayout.error = null
+                binding.passwordLayout.error = null
+                binding.confirmPasswordLayout.error = null
                 view?.findNavController()?.navigate(R.id.action_registerFragment_to_loginFragment)
             } else {
+                binding.usernameLayout.error = null
+                binding.passwordLayout.error = null
+                binding.confirmPasswordLayout.error = "Password must match to confirm"
                 Log.d("Register Fragment", "Password must Match")
             }
         }

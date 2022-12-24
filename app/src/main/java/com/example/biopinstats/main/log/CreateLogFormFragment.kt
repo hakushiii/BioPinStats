@@ -46,14 +46,15 @@ class CreateLogFormFragment : Fragment() {
                 description = binding.descriptionEdit.text.toString()
             )
             findNavController().navigateUp()
+            binding.statusLayout.error = null
         } else {
-            //TODO
+            binding.statusLayout.error = "Required Field"
         }
     }
 
     private fun isEntryValid(): Boolean {
         return logViewModel.isEntryValid(
-            Status = binding.timeEdit.text.toString()
+            Status = binding.statusEdit.text.toString()
         )
     }
 }

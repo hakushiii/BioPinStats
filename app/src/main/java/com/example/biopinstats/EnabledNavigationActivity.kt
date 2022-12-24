@@ -25,6 +25,8 @@ class EnabledNavigationActivity : AppCompatActivity() {
         val binding: ActivityEnabledBinding = DataBindingUtil.setContentView(this, R.layout.activity_enabled)
         drawerLayout = binding.drawerLayout
 
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         val navView : NavigationView = findViewById(R.id.nav_view)
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.myNavHostFragment) as NavHostFragment

@@ -68,7 +68,7 @@ class LogFragment : Fragment() {
     private fun showConfirmationDialog(log: Log) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(android.R.string.dialog_alert_title))
-            .setMessage("Are you sure you want to delete?")
+            .setMessage("Are you sure about that?")
             .setCancelable(false)
             .setNegativeButton("No") { _, _ -> }
             .setPositiveButton("Yes") { _, _ -> logViewModel.deleteLog(log) }

@@ -47,6 +47,7 @@ class UpdateLogFormFragment : Fragment() {
                 binding.apply {
                     timeEdit.setText(it.Uptime)
                     statusEdit.setText(it.Status)
+                    descriptionEdit.setText(it.Description)
                 }
             }
         }
@@ -64,8 +65,9 @@ class UpdateLogFormFragment : Fragment() {
                 description = binding.descriptionEdit.text.toString()
             )
             findNavController().navigateUp()
+            binding.statusLayout.error = null
         } else {
-            //TODO
+            binding.statusLayout.error = "Required Field"
         }
     }
 
@@ -73,7 +75,7 @@ class UpdateLogFormFragment : Fragment() {
 
     private fun isEntryValid(): Boolean {
         return logViewModel.isEntryValid(
-            Status = binding.timeEdit.text.toString()
+            Status = binding.statusEdit.text.toString()
         )
     }
 }

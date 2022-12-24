@@ -23,7 +23,7 @@ class ApiViewModel: ViewModel() {
                 while (true) {
                     val result = CommandApi.retrofitService.getData()
                     _command.value = result.command
-                    delay(5000)
+                    delay(2500)
                 }
             }
             catch (e: Exception) {

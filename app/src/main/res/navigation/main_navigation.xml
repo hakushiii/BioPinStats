@@ -7,8 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.biopinstats.main.HomeFragment"
-        android:label="HomeFragment" >
+        android:name="com.example.biopinstats.main.HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_logFragment"
             app:destination="@id/logFragment" />
@@ -18,8 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/logFragment"
-        android:name="com.example.biopinstats.main.LogFragment"
-        android:label="LogFragment" >
+        android:name="com.example.biopinstats.main.LogFragment">
         <action
             android:id="@+id/action_logFragment_to_logFormFragment"
             app:destination="@id/createLogFormFragment" />
@@ -29,30 +27,25 @@
     </fragment>
     <fragment
         android:id="@+id/liveChangesFragment"
-        android:name="com.example.biopinstats.main.LiveChangesFragment"
-        android:label="LiveChangesFragment" />
+        android:name="com.example.biopinstats.main.LiveChangesFragment" />
     <fragment
         android:id="@+id/createLogFormFragment"
-        android:name="com.example.biopinstats.main.log.CreateLogFormFragment"
-        android:label="LogFormFragment"/>
+        android:name="com.example.biopinstats.main.log.CreateLogFormFragment" />
 
     <fragment
         android:id="@+id/updateLogFormFragment"
-        android:name="com.example.biopinstats.main.log.UpdateLogFormFragment"
-        android:label="UpdateLogFormFragment" >
+        android:name="com.example.biopinstats.main.log.UpdateLogFormFragment">
         <argument
             android:name="id"
             app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/faqFragment"
-        android:name="com.example.biopinstats.FaqFragment"
-        android:label="fragment_faq"
+        android:name="com.example.biopinstats.main.FaqFragment"
         tools:layout="@layout/fragment_faq" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.biopinstats.AboutFragment"
-        android:label="fragment_about"
+        android:name="com.example.biopinstats.main.AboutFragment"
         tools:layout="@layout/fragment_about" />
 
 </navigation>

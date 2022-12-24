@@ -2,20 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="HOME"/>
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="HOME" />
     <item
         android:id="@+id/logs"
-        android:title="LOGS"/>
+        android:icon="@drawable/ic_baseline_scoreboard_24"
+        android:title="LOGS" />
     <item
         android:id="@+id/api"
-        android:title="API"/>
+        android:icon="@drawable/ic_baseline_signal_cellular_alt_24"
+        android:title="API" />
     <item
         android:id="@+id/about"
+        android:icon="@drawable/ic_baseline_hdr_auto_24"
         android:title="ABOUT"/>
     <item
         android:id="@+id/faq"
+        android:icon="@drawable/ic_baseline_question_mark_24"
         android:title="FAQ"/>
     <item
         android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_logout_24"
         android:title="LOGOUT"/>
 </menu>

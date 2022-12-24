@@ -33,6 +33,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -59,16 +60,25 @@ class LoginFragment : Fragment() {
         val passwordOriginal = binding.password.text.toString()
 
         if (usernameOriginal.isEmpty()) {
+            binding.usernameLayout.error = "Cannot be Empty"
+            binding.passwordLayout.error = null
             Log.d("Register Fragment", "Username Empty")
         } else if (passwordOriginal.isEmpty()) {
+            binding.passwordLayout.error = "Cannot be Empty"
+            binding.usernameLayout.error = null
             Log.d("Register Fragment","Password Empty")
         } else{
             if (userExist()) {
                 startActivity(Intent(activity, EnabledNavigationActivity::class.java))
+                binding.loginButton.error = null
+                binding.usernameLayout.error = null
+                binding.passwordLayout.error = null
                 binding.username.setText("")
                 binding.password.setText("")
             } else {
-                Log.d("Login Fragment", "Who are you")
+                binding.usernameLayout.error = "User not found"
+                binding.passwordLayout.error = null
+                Log.d("Login Fragment", "nuguseyo")
             }
         }
     }

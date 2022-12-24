@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val navController = this.findNavController(R.id.myNavHostFragment)
     }

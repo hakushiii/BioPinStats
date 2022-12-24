@@ -9,20 +9,55 @@
                 type="com.example.biopinstats.main.api.ApiViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LiveChangesFragment">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/signal_status"
-            android:layout_width="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="@{viewModel.command}"
-            tools:text="Signal" />
+            android:layout_marginTop="20dp"
+            android:text="LIVE API UPDATE"
+            android:textSize="30sp"
+            android:gravity="center"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginHorizontal="20dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="6dp"
+            android:backgroundTint="@color/gainsboro">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".LiveChangesFragment">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/command_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    app:layout_constraintBottom_toTopOf="@id/command_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/command_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@{viewModel.command}"
+                    tools:text="api_command"
+                    android:textSize="30sp"
+                    android:textStyle="bold"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 </layout>
