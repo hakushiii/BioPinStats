@@ -26,7 +26,7 @@
             app:layout_constraintTop_toBottomOf="@id/image"
             android:gravity="center"
             android:textSize="30sp"
-            android:text="BIOPIN STATUS LOG"/>
+            android:text="@string/biopin_status_log"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,11 +40,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Username"
+                    android:hint="@string/enter_username"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
@@ -52,11 +52,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Password"
+                    android:hint="@string/enter_password"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
@@ -64,11 +64,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Confirm Password"
+                    android:hint="@string/confirm_password"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,14 +76,14 @@
                 android:id="@+id/confirm_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="confirm"
+                android:text="@string/confirm"
                 android:drawableEnd="@drawable/ic_baseline_create_24"
                 android:backgroundTint="@color/blue_munsell"/>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="cancel"
+                android:text="@string/cancel"
                 android:drawableEnd="@drawable/ic_baseline_cancel_24"/>
 
         </LinearLayout>

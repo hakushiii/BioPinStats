@@ -17,7 +17,7 @@
             android:gravity="center"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:text="FREQUENTLY ASKED QUESTIONS"/>
+            android:text="@string/frequently_asked_questions"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -42,27 +42,27 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Who created the App?"
+                    android:text="@string/who_created_the_app"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:text="J. Christian Alapad"
+                    android:text="@string/j_christian_alapad"
                     android:textSize="20sp"
                     android:textStyle="italic"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="What is the App for?"
+                    android:text="@string/what_is_the_app_for"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:text="The application is made to monitor as a companion to get live data from the orientation sensor and to create logs that is used to account instances."
+                    android:text="@string/the_application_is_made_to_monitor_as_a_companion_to_get_live_data_from_the_orientation_sensor_and_to_create_logs_that_is_used_to_account_instances"
                     android:textSize="20sp"
                     android:textStyle="italic"/>
 

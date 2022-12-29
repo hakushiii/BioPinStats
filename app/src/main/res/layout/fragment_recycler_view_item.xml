@@ -25,7 +25,7 @@
                 android:id="@+id/status_text"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="STATUS:"
+                android:text="@string/status"
                 android:textSize="20sp"
                 app:layout_constraintTop_toTopOf="@id/item_cardview"
                 app:layout_constraintStart_toStartOf="@id/item_cardview"/>
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@id/status_text"
+                app:layout_constraintTop_toTopOf="@id/status_text"
                 app:layout_constraintStart_toEndOf="@id/status_text"
                 tools:text="status_text"/>
 
@@ -43,7 +43,7 @@
                 android:id="@+id/uptime_text"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="UPTIME:"
+                android:text="@string/uptime"
                 android:textSize="20sp"
                 app:layout_constraintTop_toBottomOf="@id/status"
                 app:layout_constraintStart_toStartOf="@id/item_cardview"/>
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@id/uptime_text"
+                app:layout_constraintTop_toTopOf="@id/uptime_text"
                 app:layout_constraintStart_toStartOf="@id/status"
                 tools:text="uptime_text"/>
             <View
@@ -66,7 +66,7 @@
                 android:id="@+id/description_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DESCRIPTION:"
+                android:text="@string/description"
                 android:textSize="20sp"
                 app:layout_constraintTop_toBottomOf="@id/line"
                 app:layout_constraintStart_toStartOf="@id/item_cardview"/>
@@ -84,7 +84,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:weightSum="2">
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/update_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,10 +92,10 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/delete_button"
                     android:backgroundTint="@color/blue_munsell"
-                    android:text="update"
+                    android:text="@string/update"
                     android:layout_weight="1"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/delete_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                     app:layout_constraintTop_toBottomOf="@id/description"
                     app:layout_constraintStart_toStartOf="parent"
                     android:backgroundTint="@color/gainsboro"
-                    android:text="delete"
+                    android:text="@string/delete"
                     android:layout_weight="1"/>
             </LinearLayout>
 

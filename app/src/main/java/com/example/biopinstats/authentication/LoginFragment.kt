@@ -67,7 +67,7 @@ class LoginFragment : Fragment() {
             binding.passwordLayout.error = "Cannot be Empty"
             binding.usernameLayout.error = null
             Log.d("Register Fragment","Password Empty")
-        } else{
+        } else {
             if (userExist()) {
                 startActivity(Intent(activity, EnabledNavigationActivity::class.java))
                 binding.loginButton.error = null

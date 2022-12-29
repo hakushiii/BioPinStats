@@ -17,7 +17,7 @@
             android:gravity="center"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:text="ABOUT THE APP"/>
+            android:text="@string/about_the_app"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -47,33 +47,33 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="THE CREATOR:"
+                        android:text="@string/the_creator"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="J. Christian Alapad"
+                        android:text="@string/j_christian_alapad"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:text="4th Year BSCpE Student"
+                        android:text="@string/_4th_year_bscpe_student"
                         android:textSize="20sp"
                         android:textStyle="italic"/>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="a.k.a."
+                        android:text="@string/a_k_a"
                         android:textSize="20sp"
                         android:textStyle="italic"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Z3N_/Manager/HSKH/Jimi"
+                        android:text="@string/z3n_manager_hskh_jimi"
                         android:textSize="12sp"
                         android:textStyle="italic"/>
 
