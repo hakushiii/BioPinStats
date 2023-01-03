@@ -40,8 +40,8 @@ class EnabledNavigationActivity : AppCompatActivity() {
                 R.id.home -> navController.navigate(R.id.homeFragment)
                 R.id.logs -> navController.navigate(R.id.logFragment)
                 R.id.api -> navController.navigate(R.id.liveChangesFragment)
-                R.id.about -> navController.navigate(R.id.faqFragment)
-                R.id.faq -> navController.navigate(R.id.aboutFragment)
+                R.id.about -> navController.navigate(R.id.aboutFragment)
+                R.id.faq -> navController.navigate(R.id.faqFragment)
                 R.id.logout -> finish()
             }
             true

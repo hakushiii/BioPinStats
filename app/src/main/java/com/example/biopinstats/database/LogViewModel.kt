@@ -11,7 +11,7 @@ class LogViewModel(private val logDao: LogDao): ViewModel() {
     val log: LiveData<String> = _log
 
     private val _time = MutableLiveData<String>()
-    val time: LiveData<String> = _time
+    val uptime: LiveData<String> = _time
 
     private val _status = MutableLiveData<String>()
     val status: LiveData<String> = _status
